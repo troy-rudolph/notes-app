@@ -10,6 +10,10 @@ Identity Pool ARN: arn:aws:cognito-identity:us-east-2:893557870863:identitypool/
 Stripe pub: pk_test_51HFNZrFpkpVT6mAyyVbh5hVnb5PWu3XYm07ENHg35qzGIy1yjejfAU9pPdxqqaSgBYiGXq5XG3kpgO2DhbEw7zmD00t1KZGCw3
 Stripe secret: sk_test_51HFNZrFpkpVT6mAynNn8016k0eeSk7xuWw5T23p8yOQlzErqWp3vpNCoeiCq0CaBm5yrmdcJXgPgXpKBS6Qy1x26006fpwiAEr
 
+serverless invoke local --function list --path mocks/list-event.json 
+
+npx aws-api-gateway-cli-test --username "troyrudolph@earthlink.net" --password "Aws.11223344" --user-pool-id "us-east-2_huseqtLkR" --app-client-id "k7ggis3rcsqt5ll4ar3e5mdki" --cognito-region "us-east-2" --identity-pool-id "us-east-2:d52acc4e-88d7-4086-81c6-7b68b66172c2" --invoke-url "https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod" --api-gateway-region "us-east-2" --path-template "/notes" --method "POST" --body "{""content"":""hello world"",""attachment"":""hello.jpg""}"
+
 Policy Document:
 {
   "Version": "2012-10-17",
