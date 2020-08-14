@@ -1,0 +1,98 @@
+
+App Client ID: k7ggis3rcsqt5ll4ar3e5mdki
+
+User Pool ID: us-east-2_huseqtLkR
+User Pool ARN: arn:aws:cognito-idp:us-east-2:893557870863:userpool/us-east-2_huseqtLkR
+
+Identity Pool ID: us-east-2:d52acc4e-88d7-4086-81c6-7b68b66172c2
+Identity Pool ARN: arn:aws:cognito-identity:us-east-2:893557870863:identitypool/us-east-2:d52acc4e-88d7-4086-81c6-7b68b66172c2
+
+Stripe pub: pk_test_51HFNZrFpkpVT6mAyyVbh5hVnb5PWu3XYm07ENHg35qzGIy1yjejfAU9pPdxqqaSgBYiGXq5XG3kpgO2DhbEw7zmD00t1KZGCw3
+Stripe secret: sk_test_51HFNZrFpkpVT6mAynNn8016k0eeSk7xuWw5T23p8yOQlzErqWp3vpNCoeiCq0CaBm5yrmdcJXgPgXpKBS6Qy1x26006fpwiAEr
+
+Policy Document:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "mobileanalytics:PutEvents",
+        "cognito-sync:*",
+        "cognito-identity:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::buckbranchranch/private/${cognito-identity.amazonaws.com:sub}/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "execute-api:Invoke"
+      ],
+      "Resource": [
+        "arn:aws:execute-api:us-east-2:*:YOUR_API_GATEWAY_ID/*"
+      ]
+    }
+  ]
+}
+
+Serverless Deploy Log:
+Serverless: DOTENV: Loading environment variables from .env:
+Serverless:      - STRIPE_SECRET_KEY
+Serverless: Bundling with Webpack...
+Serverless: No external modules needed
+Serverless: Packaging service...
+Serverless: Creating Stack...
+Serverless: Checking Stack create progress...
+........
+Serverless: Stack create finished...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service create.zip file to S3 (79.37 KB)...
+Serverless: Uploading service get.zip file to S3 (75.42 KB)...
+Serverless: Uploading service list.zip file to S3 (75.45 KB)...
+Serverless: Uploading service billing.zip file to S3 (146.66 KB)...
+Serverless: Uploading service delete.zip file to S3 (75.27 KB)...
+Serverless: Uploading service update.zip file to S3 (75.95 KB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+..............................................................................................................................
+Serverless: Stack update finished...
+Service Information
+service: notes-app-api
+stage: prod
+region: us-east-2
+stack: notes-app-api-prod
+resources: 43
+api keys:
+  None
+endpoints:
+  POST - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/notes
+  GET - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  GET - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/notes
+  PUT - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  DELETE - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/notes/{id}
+  POST - https://6srxhl7q86.execute-api.us-east-2.amazonaws.com/prod/billing
+functions:
+  create: notes-app-api-prod-create
+  get: notes-app-api-prod-get
+  list: notes-app-api-prod-list
+  update: notes-app-api-prod-update
+  delete: notes-app-api-prod-delete
+  billing: notes-app-api-prod-billing
+layers:
+  None
+
+************************************************************************************************************************Serverless: Announcing Metrics, CI/CD, Secrets and more built into Serverless Framework. Run "serverless login" to activate for free..
+************************************************************************************************************************
