@@ -1,0 +1,74 @@
+:\Users\trudolph\git\notes-app-api>serverless -v deploy
+Serverless: DOTENV: Loading environment variables from .env:
+Serverless:      - STRIPE_SECRET_KEY
+Serverless: Using configuration:
+{
+  "packager": "npm",
+  "packagerOptions": {},
+  "webpackConfig": "node_modules\\serverless-bundle/src/webpack.config.js",
+  "includeModules": {
+    "forceExclude": [
+      "aws-sdk"
+    ],
+    "forceInclude": null,
+    "packagePath": "package.json"
+  },
+  "keepOutputDirectory": false
+}
+Serverless: Removing C:\Users\trudolph\git\notes-app-api\.webpack
+Serverless: Using multi-compile (individual packaging)
+Serverless: Bundling with Webpack...
+Serverless: Fetch dependency graph from C:\Users\trudolph\git\notes-app-api\package.json
+Serverless: No external modules needed
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\create [24 ms]
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\get [15 ms]
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\list [9 ms]
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\update [12 ms]
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\delete [10 ms]
+Serverless: Zip function: C:\Users\trudolph\git\notes-app-api\.webpack\billing [13 ms]
+Serverless: Packaging service...
+Serverless: Remove C:\Users\trudolph\git\notes-app-api\.webpack
+Serverless: Service files not changed. Skipping deployment...
+Service Information
+service: notes-app-2-api
+stage: dev
+region: us-east-2
+stack: notes-app-2-api-dev
+resources: 50
+api keys:
+  None
+endpoints:
+  POST - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/notes
+  GET - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  GET - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/notes
+  PUT - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  DELETE - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/notes/{id}
+  POST - https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev/billing
+functions:
+  create: notes-app-2-api-dev-create
+  get: notes-app-2-api-dev-get
+  list: notes-app-2-api-dev-list
+  update: notes-app-2-api-dev-update
+  delete: notes-app-2-api-dev-delete
+  billing: notes-app-2-api-dev-billing
+layers:
+  None
+
+Stack Outputs
+AttachmentsBucketName: notes-app-2-api-dev-attachmentsbucket-c2fgro3586am
+UserPoolClientId: 1ppv2hl26m5c1jj1jla3vkbn0o
+UserPoolId: us-east-2_41164IfOI
+DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-delete:1
+CreateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-create:1
+GetLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-get:1
+UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-update:1
+IdentityPoolId: us-east-2:7e344d27-9736-463d-a1ce-33babe4041a3
+BillingLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-billing:1
+ListLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:893557870863:function:notes-app-2-api-dev-list:1
+ServiceEndpoint: https://1zblm5syi3.execute-api.us-east-2.amazonaws.com/dev
+ServerlessDeploymentBucketName: notes-app-2-api-dev-serverlessdeploymentbucket-19bqmuvgudr5z
+
+
+************************************************************************************************************************
+Serverless: Announcing Metrics, CI/CD, Secrets and more built into Serverless Framework. Run "serverless login" to activate for free..
+************************************************************************************************************************
